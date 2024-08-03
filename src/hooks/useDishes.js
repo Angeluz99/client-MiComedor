@@ -1,5 +1,4 @@
-// In useDishes.js
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { fetchDishesForRestaurant, createDish, deleteDish } from '../utils/apiService';
 
 const useDishes = (restaurantId) => {
@@ -7,11 +6,7 @@ const useDishes = (restaurantId) => {
   const [isLoadingDishes, setIsLoadingDishes] = useState(false);
   const [errorDishes, setErrorDishes] = useState('');
 
-  useEffect(() => {
-    fetchDishes();
-  }, [restaurantId]);
-
-  const fetchDishes = async () => {
+  const fetchDishes = useCallback(async () => {
     setIsLoadingDishes(true);
     setErrorDishes('');
     try {
@@ -23,7 +18,11 @@ const useDishes = (restaurantId) => {
     } finally {
       setIsLoadingDishes(false);
     }
-  };
+  }, [restaurantId]);
+
+  useEffect(() => {
+    fetchDishes();
+  }, [fetchDishes]);
 
   const addDish = async (dishData) => {
     try {
