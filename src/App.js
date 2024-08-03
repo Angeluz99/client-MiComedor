@@ -5,8 +5,6 @@ import Register from './Register';
 import Login from './Login'; 
 import HomePage from './HomePage'; 
 import InfoDisplay from './components/InfoDisplay'; 
-require('dotenv').config();
-
 
 function App() {
   return (
