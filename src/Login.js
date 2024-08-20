@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'; /*useNavigate se usa para 
 import FooterDisplay from './components/FooterDisplay';
 
 function Login() {
-    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001'; // Use environment variable or fallback to local
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001'; 
 
     const navigate = useNavigate(); /*para navegar programáticamente a otras rutas.*/
     const [username, setUsername] = useState('');
