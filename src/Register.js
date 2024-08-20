@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import FooterDisplay from './components/FooterDisplay';
 
 function Register() {
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001'; 
+
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -14,7 +16,7 @@ function Register() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch('/api/users/register', {
+            const response = await fetch(`${backendUrl}/api/users/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'; /*useNavigate se usa para 
 import FooterDisplay from './components/FooterDisplay';
 
 function Login() {
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001'; // Use environment variable or fallback to local
+
     const navigate = useNavigate(); /*para navegar programáticamente a otras rutas.*/
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -12,7 +14,7 @@ function Login() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch('/api/users/login', {
+            const response = await fetch(`${backendUrl}/api/users/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password, restaurantName }),

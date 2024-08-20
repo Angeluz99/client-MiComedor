@@ -50,13 +50,15 @@ function HomePage() {
   };
 
   const confirmDishes = async () => {
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001'; 
+
     if (!selectedTable || toBeAddedDishes.length === 0) {
       alert('No table selected or no dishes to add.');
       return;
     }
     try {
       for (const dish of toBeAddedDishes) {
-        const response = await fetch(`/api/tables/add-dish/${selectedTable._id}`, {
+        const response = await fetch(`${backendUrl}/api/tables/add-dish/${selectedTable._id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ dishId: dish._id })
@@ -68,7 +70,7 @@ function HomePage() {
       };
       setToBeAddedDishes([]); // Clear the temporary dishes list
       // Fetch the updated table data
-      const updatedTableResponse = await fetch(`/api/tables/${selectedTable._id}`);
+      const updatedTableResponse = await fetch(`${backendUrl}/api/tables/${selectedTable._id}`);
       if (!updatedTableResponse.ok) {
         throw new Error('Failed to fetch updated table data.');
       }
