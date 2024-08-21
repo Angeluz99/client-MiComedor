@@ -110,7 +110,6 @@ function Register() {
                     </div>
                 </form>
                 <FooterDisplay className='outFooter' />
-
             </div>
         </div>
     );
