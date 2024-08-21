@@ -103,7 +103,7 @@ function HomePage() {
   return (
     <div className='homePage'>
       <header>
-        <h4><img src='images/smallogo.png' alt='logo'></img></h4>
+        <h4><img src='/images/smallogo.png' alt='logo'></img></h4>
         <h3><span>{restaurantName}</span></h3>
         <h5><i className="bi bi-person-bounding-box"></i> <span>{username}</span></h5>
         <section><Link to="/"><i className="bi bi-box-arrow-left"></i> Cerrar Sesión</Link></section>
@@ -165,7 +165,7 @@ function HomePage() {
       </main>
       <footer>
         <FooterDisplay />
-        <img src='images/smallogo.png' alt='logo'></img>
+        <img src='/images/smallogo.png' alt='logo'></img>
       </footer>
     </div>
   );
