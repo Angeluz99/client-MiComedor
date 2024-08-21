@@ -27,6 +27,9 @@ body, html {
   background-image: url('../public/images/logo.png'); 
   background-position: center;
   background-repeat: repeat;
+  overflow: hidden;
+  box-sizing: border-box;
+
 }
 
 .formRegister{
@@ -34,21 +37,27 @@ body, html {
     position: absolute;
     top: 3%;
     margin-inline: 10vw;
-    padding: 2vw;
+    padding: 1vw;
     display: flex;
     flex-direction: column;
     text-align: center;
     border-radius: 5%;
     color:#fbe2af;
     backdrop-filter: blur(10px);
+    transition: all .2s ease-in-out;
 
 
 }
 
 .formRegister input{
-    margin: 5vw 0vw;
+    /* text-align: center; */
+    margin: 4vw 0vw;
     height: 8vw;
     font-size: 4vw;
+    border-radius: 15px;
+    border: none;
+    font-style: italic;
+    font-weight: 700;
 
 }
 
@@ -61,7 +70,7 @@ body, html {
     margin: 2vw 2vw;
     background-color:#7c646c;
     border-radius: 5%;
-    border: none;
+    border: solid 1px var(--peach);
     color: #fadda7;
     font-size: 5vw;
 
@@ -73,9 +82,13 @@ body, html {
     text-shadow: 2px 1px 1px var(--purple);
 
 }
-.formRegister details p{
+.formRegister details{
+    transition: all .2s ease-in-out;
+
+} 
+/* .formRegister details p{
     text-shadow: 2px 1px 1px var(--purple);
-}
+} */
 
 .outFooter{
     /* position: absolute;
@@ -114,7 +127,7 @@ body, html {
 
     .formRegister input{
         font-size: 3vw;
-        margin: 1vw 5vw;
+        margin: .8vw 5vw;
         height: 5vw;
     }
 
@@ -130,8 +143,8 @@ body, html {
         height: 100vh;
     }
     .formRegister{
+        margin-top: 1vw;
         top: 0;
-        width: 50%;
         display: flex;
  
 
