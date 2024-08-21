@@ -13,6 +13,9 @@
       "src": "/logo192.png",
       "dest": "/logo192.png"
     },
+     { "src": "/smallogo.png",
+      "dest": "/smallogo.png"
+    },
     {
       "src": "/logo512.png",
       "dest": "/logo512.png"
