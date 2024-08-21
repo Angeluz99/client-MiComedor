@@ -361,7 +361,6 @@ aside button{
 
 
 main{
-    /* background: linear-gradient(297deg, rgba(252,143,59,.8) 24%, rgba(251,226,175,1) 67%);     */
     grid-area: 3/2/6/5;
     background-image: url('../public/images/backcook.jpg'); 
     background-repeat: repeat;  
