@@ -8,6 +8,7 @@ function Register() {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false); // Estado para controlar la visibilidad
     const [restaurant, setRestaurant] = useState('');
     const [restaurantCode, setRestaurantCode] = useState('');
     const [message, setMessage] = useState(null); // To store the message to display
@@ -15,6 +16,14 @@ function Register() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
+        // Trim input values before submission
+        const trimmedUsername = username.trim();
+        const trimmedEmail = email.trim();
+        const trimmedPassword = password.trim();
+        const trimmedRestaurant = restaurant.trim();
+        const trimmedRestaurantCode = restaurantCode.trim();
+
         try {
             const response = await fetch(`${backendUrl}/api/users/register`, {
                 method: 'POST',
@@ -22,11 +31,11 @@ function Register() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    username,
-                    email,
-                    password,
-                    restaurantName: restaurant,
-                    restaurantCode: restaurantCode,
+                    username: trimmedUsername,
+                    email: trimmedEmail,
+                    password: trimmedPassword,
+                    restaurantName: trimmedRestaurant,
+                    restaurantCode: trimmedRestaurantCode,
                 }),
             });
             const data = await response.json();
@@ -59,6 +68,10 @@ function Register() {
         </div>
     );
 
+    const toggleShowPassword = () => {
+        setShowPassword(!showPassword);
+      };
+
     return (
         <div className='wrapper'>
             <div className='formRegister'>
@@ -82,13 +95,19 @@ function Register() {
                         placeholder="Email"
                         required
                     />
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Password"
-                        required
-                    />
+                    <div className='passwordDiv'>
+                        <input
+                            type={showPassword ? 'text' : 'password'}                        
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="Password"
+                            required
+                        />
+                        <span className='passwordButton' type="button" onClick={toggleShowPassword}>
+                            {showPassword ? '🫣' : '👁️'}
+                        </span>
+                    </div>
+
                     <input
                         type="text"
                         value={restaurant}

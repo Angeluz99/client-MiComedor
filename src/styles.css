@@ -86,9 +86,16 @@ body, html {
     transition: all .2s ease-in-out;
 
 } 
-/* .formRegister details p{
-    text-shadow: 2px 1px 1px var(--purple);
-} */
+.passwordDiv{
+    position: relative;
+}
+.passwordButton{
+/* font-size: 1vw; */
+position: absolute;
+background-color: transparent;
+top: 5vw;
+right: 15vw;
+}
 
 .outFooter{
     /* position: absolute;
@@ -160,6 +167,12 @@ body, html {
 
     .formRegister button{
         font-size: 2vw;
+    }
+
+    .passwordButton{
+
+        top: 1.5vw;
+        right: 20vw;
     }
 
 
@@ -503,6 +516,8 @@ color: var(--peach);
     margin: 1vw;
     height: fit-content;
     background-color: #fc8f3b5c;
+    text-transform: uppercase;
+
 
 
 }

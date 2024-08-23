@@ -25,7 +25,7 @@ const DishesDisplay = ({ dishes, addDish, restaurantId, addDishToTable, removeDi
     if (window.confirm('Seguro de borrar este artículo?')) {
         try {
             await removeDish(dishId);
-            alert('Artículo ha sido borrado');
+            // alert('Artículo ha sido borrado');
         } catch (error) {
             alert(`Error: ${error.message}`);
         }
@@ -42,7 +42,7 @@ const DishesDisplay = ({ dishes, addDish, restaurantId, addDishToTable, removeDi
           <option value="Bebida">Bebida</option>
           <option value="Otros">Otros</option>
         </select>
-        <button type="submit">Crear Platillo</button>
+        <button type="submit">Crear Artículo</button>
       </form>
 
       <div className='dishesDisplay'>

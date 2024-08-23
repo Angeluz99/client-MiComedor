@@ -8,6 +8,8 @@ function Login() {
     const navigate = useNavigate(); /*para navegar programáticamente a otras rutas.*/
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false); // Estado para controlar la visibilidad
+
     const [restaurantName, setRestaurantName] = useState('');
     const [errorMsg, setErrorMsg] = useState(''); /*Almacena mensajes de error que pueden surgir durante el proceso de inicio de sesión.*/
 
@@ -41,6 +43,11 @@ function Login() {
     };
     console.log(process.env.REACT_APP_BACKEND_URL);
 
+    const toggleShowPassword = () => {
+        setShowPassword(!showPassword);
+      };
+
+
     return (
         <div className='wrapper'>
             <div className="formRegister">
@@ -53,13 +60,18 @@ function Login() {
                         placeholder="Nombre de usuario"
                         required
                     />
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Contraseña"
-                        required
-                    />
+                    <div className='passwordDiv'>
+                        <input
+                            type={showPassword ? 'text' : 'password'}                        
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="Password"
+                            required
+                        />
+                        <span className='passwordButton' type="button" onClick={toggleShowPassword}>
+                            {showPassword ? '🫣' : '👁️'}
+                        </span>
+                    </div>
                     <input
                         type="text"
                         value={restaurantName}
