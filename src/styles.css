@@ -24,9 +24,10 @@ body, html {
   padding: 0;
   height: 100vh; 
   width: 100vw; 
-  background-image: url('../public/images/logo.png'); 
+  background-image: url('../public/images/backLogo.png'); 
+  /* background-size: */
   background-position: center;
-  background-repeat: repeat;
+  background-size: 600px;
   overflow: hidden;
   box-sizing: border-box;
 
@@ -123,6 +124,20 @@ right: 15vw;
     height: fit-content;
 }
 
+.pruebas{
+    position: absolute;
+    color: var(--clear);
+    font-size: 5vw;
+    bottom: 15vh;
+    padding: 2vw;
+    left: 30vw;
+    border-radius: 5%;
+    color:var(--clear);
+    background-color: var(--tpurple);
+    backdrop-filter: blur(10px);
+
+}
+
 
 @media only screen and (min-width: 768px) {
 
@@ -137,6 +152,15 @@ right: 15vw;
         margin: .8vw 5vw;
         height: 5vw;
     }
+    .pruebas{
+
+        font-size: 1.5vw;
+        bottom: 5vh;
+        padding: 1vw;
+        left: 43vw;
+
+    
+    }
 
 
 }
@@ -145,9 +169,8 @@ right: 15vw;
 
     .wrapper {
 
-        background-position: center;
-        background-repeat: repeat-y;
-        height: 100vh;
+        background-position:center;
+        background-size: 600px;
     }
     .formRegister{
         margin-top: 1vw;
@@ -377,7 +400,7 @@ main{
     grid-area: 3/2/6/5;
     background-image: url('../public/images/backcook.jpg'); 
     background-repeat: repeat;  
-    scrollbar-color:  var(--tpurple) var(--peach);
+    scrollbar-color: rgba(120, 12, 84, 0.26)  var(--peach);
     scrollbar-width:thin;
     overflow: auto ;
 
@@ -601,6 +624,7 @@ footer img{
     .dishCard {
         font-size: 3vw;
     }
+
 
     nav div:hover{
         scale: 1.1;

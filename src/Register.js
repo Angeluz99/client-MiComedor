@@ -16,7 +16,6 @@ function Register() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
         // Trim input values before submission
         const trimmedUsername = username.trim();
         const trimmedEmail = email.trim();

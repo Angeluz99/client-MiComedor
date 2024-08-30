@@ -57,7 +57,7 @@ function Login() {
                         type="text"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
-                        placeholder="Nombre de usuario"
+                        placeholder="Nombre de Usuario"
                         required
                     />
                     <div className='passwordDiv'>
@@ -76,7 +76,7 @@ function Login() {
                         type="text"
                         value={restaurantName}
                         onChange={(e) => setRestaurantName(e.target.value)}
-                        placeholder="Nombre del restaurante"
+                        placeholder="Nombre del Restaurante"
                         required
                     />
                     <button type="submit">ENTRAR</button>
@@ -87,7 +87,14 @@ function Login() {
                 </form>
                 <FooterDisplay className='outFooter' />
             </div>
-        
+
+            <details className='pruebas'>
+                <summary>Solo quiero probar</summary>
+                <p>~ test-usuario</p>
+                <p>~ testpassword</p>
+                <p>~ testrestaurant</p>
+            </details>
+
         </div>
     );
 }
