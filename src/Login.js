@@ -90,9 +90,9 @@ function Login() {
 
             <details className='pruebas'>
                 <summary>Solo quiero probar</summary>
-                <p>~ test-usuario</p>
-                <p>~ testpassword</p>
-                <p>~ testrestaurant</p>
+                <p>test-usuario</p>
+                <p>testpassword</p>
+                <p>testrestaurant</p>
             </details>
 
         </div>
