@@ -45,9 +45,9 @@ function InfoDisplay() {
         contáctanos para crear una acorde a tus necesidades.
       </p>
       <section>
-        {" "}
-        <a href="https://angeluz99.github.io/Portfolio/indexEsp.html"></a>{" "}
-        CONTACTO
+        <a href="https://angeluz99.github.io/Portfolio/indexEsp.html">
+          CONTACTO
+        </a>
       </section>
     </div>
   );
