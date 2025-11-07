@@ -2,12 +2,16 @@ import React from 'react';
 import format from 'date-fns/format';
 
 const TablesDisplay = ({ tables, mode, closeTable, selectTable, deleteAllTables }) => {
+  const totalAllTables = tables.reduce((sum, table) => sum + (table.total || 0), 0);
+
   if (!tables.length) {
     return <p>No hay mesas disponibles.</p>;
   }
 
   return (
     <>
+      <h3 className="total-all-tables">Total: ${totalAllTables.toFixed(2)}</h3>
+
       <ul className='tablesDisplay'>
         {tables.map(table => (
           <li className='card tableCard' key={table._id}>
